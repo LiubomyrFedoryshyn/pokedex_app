@@ -74,7 +74,36 @@ body {
   margin: 5px 10px;
 }
 
+.App .main-wrapper .pokemonList .poki-wrapper .poki-info .img-wrapper {
+  position: relative;
+  width: 85%;
+  height: 135px;
+  margin: 10px;
+}
+
+.App .main-wrapper .pokemonList .poki-wrapper .poki-info .img-wrapper:before {
+  content: "";
+  background-color: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--red-color);
+  border-bottom: none;
+  position: absolute;
+  left: 43%;
+  top: 45%;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  z-index: -1;
+}
+
+.App .main-wrapper .pokemonList .poki-wrapper .poki-info .img-wrapper:hover:before {
+  display: none;
+}
+
 .App .main-wrapper .pokemonList .poki-wrapper .poki-info img {
+  z-index: 3;
+  background-color: var(--light-color);
   border: 1px solid var(--grey-color);
   width: 85%;
   margin: 10px;
@@ -680,6 +709,20 @@ body {
   }
   .App .main-wrapper .visible .pokedex {
     width: 126px;
+  }
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import IosRefresh from 'react-ionicons/lib/IosRefresh'
 
 export default class PokiCard extends Component {
 
@@ -19,7 +20,6 @@ export default class PokiCard extends Component {
         targetUrl = url
         axios.get(proxyUrl + targetUrl)
         .then(res => {
-       
             this.setState({
                 type: res.data.types[0].type.name,
                 name,
@@ -36,7 +36,9 @@ export default class PokiCard extends Component {
   render() {
     return (
       <div className={this.state.type}>
-        <img src={this.state.img} alt={this.state.name}/>
+        <div className='img-wrapper'>
+         <img src={this.state.img} alt={this.state.name}/>
+        </div>
         <h3>{this.state.name}</h3>
         <div className='types'><span className={this.state.type}>{this.state.type}</span> <span className={this.state.typeTwo}>{this.state.typeTwo}</span></div>
       </div>

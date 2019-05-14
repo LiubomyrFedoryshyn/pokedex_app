@@ -64,7 +64,32 @@
          border: 1px solid var(--black-color);
          margin: 5px 10px;
          .poki-info {
+           .img-wrapper {
+            position: relative;
+            width: 85%;
+            height: 135px;
+            margin: 10px;
+            &:before {
+              content: "";
+              background-color: transparent;
+              border-radius: 50%;
+              width: 20px;
+              height: 20px;
+              border: 2px solid var(--red-color);
+              border-bottom: none;
+              position: absolute;
+              left: 43%;
+              top: 45%;
+              animation: rotate 2s linear infinite;
+              z-index: -1;
+            }
+            &:hover:before {
+              display: none;
+            }
+           }
            img {
+             z-index: 3;
+             background-color: var(--light-color);
              border: 1px solid var(--grey-color);
              width: 85%;
              margin: 10px;
@@ -589,4 +614,8 @@
         }
       }
     }
+  }
+
+  @keyframes rotate {
+    100% {transform: rotate(360deg)}
   }
