@@ -40,8 +40,9 @@ body {
 }
 
 .App h1:hover {
+  transform: scale(1.1);
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -ms-transform: scale(1.1);
   color: var(--red-color);
 }
 
@@ -92,8 +93,9 @@ body {
   position: absolute;
   left: 43%;
   top: 45%;
+  animation: rotate 2s linear infinite;
   -webkit-animation: rotate 2s linear infinite;
-          animation: rotate 2s linear infinite;
+  -moz-animation: rotate 2s linear infinite;
   z-index: -1;
 }
 
@@ -115,8 +117,9 @@ body {
 
 .App .main-wrapper .pokemonList .poki-wrapper .poki-info img:hover {
   cursor: pointer;
+  transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
 }
 
 .App .main-wrapper .pokemonList .poki-wrapper .poki-info h3 {
@@ -660,6 +663,12 @@ body {
   .App .main-wrapper .pokemonList .load-more {
     width: 65%;
   }
+  .App .main-wrapper .pokemonList .poki-wrapper .poki-info img:hover {
+    -webkit-transform: unset;
+            transform: unset;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 @media (max-width: 768px) {
@@ -712,17 +721,22 @@ body {
   }
 }
 
-@-webkit-keyframes rotate {
+@keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
 
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
 @keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=App.css.map */

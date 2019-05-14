@@ -541,6 +541,12 @@
         .load-more {
           width: 65%;
         }
+        .poki-wrapper .poki-info img {
+          &:hover {
+            transform: unset;
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }
