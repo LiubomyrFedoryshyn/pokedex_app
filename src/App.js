@@ -45,7 +45,7 @@ loadMore = () => {
   componentWillMount(){
     let limit = this.state.limit;
     let proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = `http://pokeapi.co/api/v1/pokemon/?limit=${limit}&offset=12.`
+        targetUrl = `http://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=12.`
     axios.get(proxyUrl + targetUrl)
     .then(res => {
       this.setState({
